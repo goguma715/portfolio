@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>토스-작업중</title>
+    <title>토스</title>
     <link rel="icon" type="image/png" sizes="32x32" href="https://static.toss.im/tds/favicon/favicon-32x32.png">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            console.log($(window).scrollTop());
+            if($(window).scrollTop()==0){
+                $("nav").css("border-bottom-style","none");
+            }
+            if($(window).scrollTop()>0){
+                $("nav").css({"border-style":"solid","border-color":"lightgray","border-bottom-size":"1px"});
+            }
+            if($(window).scrollTop()>1200){
+                $("#box2").addClass("animate__animated").show().addClass("animate__backInRight");
+            } 
+            if($(window).scrollTop()>1500){
+                $("#box3").addClass("animate__animated").show().addClass("animate__backInLeft");
+            }
+        });
+    });
+
+</script>
+
 </head>
 <body>
     <!-- navigation--------------------------------------->

@@ -1,7 +1,6 @@
 /* navigation---------------------------- */
 .navbar {
     background: white !important;
-    border-bottom: none !important;
 }
 .navbar a{
     color: #4E5968 ;    
@@ -98,6 +97,7 @@
 #box2,#box3 {
     height: 887px;
     position: relative;
+    opacity: 0;
 }
 .pic01{
     position: absolute;

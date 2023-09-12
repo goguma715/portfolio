@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,500&display=swap');
+    * { margin: 0; padding: 0;}
+
+    a { 
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-family: 'Roboto', sans-serif;
+    }
+    li {
+        list-style: none;
+        text-align: center;
+    }
+    /* 비디오 배경 설정 */
+    .video-background {
+    background: #000;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -99;
+    }
+
+    .video-foreground,
+    .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0.8;
+    }
+
+    @media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+    }
+
+    @media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+    }
+
+    /* 로고 */
+    h1{
+        position: fixed;
+        top: 40px;
+        left: 70px;
+        z-index: 10;
+    }
+    h1 img{
+        width: 280px;
+        height: auto;
+    }
+    /* sns버튼 */
+    #sns {
+        position: fixed;
+        top: 60px;
+        right: 50px;
+    }
+    #sns li{
+        float:left; margin-left: 20px;
+        font-size: 25px;
+    }
+    #sns i{
+        color: white;
+    }
+    /* 텍스트 박스 */
+    #textbox{
+        width: 350px;
+        height: 280px;
+        position: fixed;
+        top: 200px;
+        right: 100px;
+        color: white;
+        text-align: center;
+    }
+    #A {
+        font-size: 30px;
+        font-family: 'Fira Sans', sans-serif;
+    }
+    #B {
+        font-size: 60px;
+        font-family: 'Fira Sans', sans-serif;
+
+    }
+    /* 메뉴 */
+    /* 하위메뉴 선택시 다른 메뉴의 하위메뉴 뜨는거 고치기 */
+    nav {
+        width: 700px;
+        height: 100%;
+        position: fixed;
+        background: rgb(158, 14, 14);
+        transform: skewX(-30deg);
+        left: -280px;
+    }
+    .menu {
+        position: absolute;
+        top: 200px;
+        left: 460px;
+    }
+    .menu a{
+        display: block;
+        transform: skewX(30deg); 
+        line-height: 50px;
+        font-size: 20px;
+    }
+    .menu>li>a {
+        color: white;
+    }
+    .menu a{
+        font-family: 'Fira Sans', sans-serif;
+    }
+    .menu>li{
+        position: relative;
+        
+    }
+    .menu li{
+        width: 220px; height: 50px;
+        padding: 10px;
+    }
+    .menu ul{
+        pointer-events: none;
+    }
+    .menu li ul{
+        position: absolute;
+        left: 210px; top: -10px;
+        background: white;
+        opacity: 0;
+        transition: 0.5s;
+        
+    }
+    .menu li ul li{
+        border-bottom: solid 3px;
+        
+    }
+
+    .menu>li:hover ul{
+        opacity: 0.7;
+        pointer-events: auto;
+    }    
+    .menu>li:hover a{
+        color: black;
+    }
+    .menu li:hover{
+        background: white;
+    }
+    .menu li ul li:hover{
+        background: black;
+        border-bottom: solid 3px white;
+
+    }
+    .menu li ul li:hover a{
+        color: white;
+    }
+
+    #on ul{
+        opacity: 0.7;
+        pointer-events: auto;
+    }
+    #on ul {
+        background: black;
+        border-bottom: solid 3px white;
+    }
+    #on ul, #on ul a{
+        color: white;
+    }
+
+    
+
+    /* side box---------------------------------------------------- */
+    #side{
+            width: 800px;
+            height: 100%;
+            position: fixed;
+            background: darkred;
+            bottom: 0px;
+            right: -800px;
+            transform: skewx(-30deg);
+            transition: 0.5s;
+            opacity: 0.5;
+        }
+        #con{
+            width: 400px;
+            height: 100%;
+            position: absolute;
+            background: #161616;
+            left: 150px;
+            transition: 0.5s;
+            box-sizing: border-box;
+            padding-top: 850px;
+            padding-left: 50px;
+            color: white;
+        }
+        #side:hover {
+            right: -500px; opacity: 0.8;
+        }
+        #side:hover #con{
+            left: 50px;
+        }
+
+        /* sidebox내 메뉴 */
+        #con p h3{
+            display: inline-block;
+            color: white;
+        }
+        #con img{
+            width: 300px; height: 70px;
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+        /* 사이드박스 애니메이션 ---------------------------*/
+        #con img:hover{
+            opacity: 1;
+        }
+
+        #con div{
+            position: absolute;
+            left: 500px;
+            transition: 0.8s;
+        }
+        #side:hover #con div{
+            left: 50px;
+        }
+
+        /* 화살표------------ */
+        #abc {
+            color: white;
+            position: absolute;
+            font-size: 60px;
+            width: 200px;
+            height: 100px;
+            bottom: 20px;
+            right: 50px;
+        }
+        #abc i{
+            position: absolute;
+            opacity: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 배경 동영상 -->
+    <div class="video-background">
+        <div class="video-foreground">
+              <iframe src="https://www.youtube.com/embed/uiE5Ox8NIbQ?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=uiE5Ox8NIbQ&mute=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!-- 로고 -->
+
+    <h1>
+        <img src="img/logo.png">
+    </h1>
+    <!-- sns버튼 -->
+    <ul id="sns">
+		<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+		<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+		<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+	</ul>
+    <!-- 메뉴 -->
+    <nav>
+        <ul class="menu">
+            <li id="on">
+                <a href="#">Home</a>
+                <ul>
+                    <li><a href="#">English</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Our Company</a>
+                <ul>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Strategy</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Brands</a>
+                <ul>
+                    <li><a href="#">Sparkling Drinks</a></li>
+                    <li><a href="#">Sport Drinks</a></li>
+                    <li><a href="#">Coffees</a></li>
+                    <li><a href="#">Juices</a></li>
+                    <li><a href="#">Teas</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Stories</a>
+                <ul>
+                    <li><a href="#">Brand Story</a></li>
+                    <li><a href="#">Original</a></li>
+                    <li><a href="#">Culture</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Creations</a>
+                <ul>
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Collaboration</a></li>
+                    <li><a href="#">Goods</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- 텍스트박스 -->
+    <section id="textbox">
+        <p id="A">Taste the feeling</p>
+        <p id="B">"Real Magic"</p>
+    </section>
+    <!--side box---------------------------------------------------- -->
+    <div id="side">
+        <div id="con">
+            <div>
+                <p>
+                    <h3>News & Notice</h3>
+                    <a href="#"><img src="img/pic01.png"></a>
+                </p>
+                <p>
+                    <h3>Event & Community</h3>
+                    <a href="#"><img src="img/pic02.png"></a>
+                </p>
+                <p>
+                    <h3>Product Review</h3>
+                    <a href="#"><img src="img/pic03.png"></a>
+                </p>
+            </div>  
+        </div>
+     </div>
+    <!-- 화살표 -->
+    <div id="abc">
+        <i class="fa fa-angle-double-left"></i>
+        <i class="fa fa-angle-double-left"></i>  
+        <i class="fa fa-angle-double-left"></i>
+    </div>
+</body>
+</html>

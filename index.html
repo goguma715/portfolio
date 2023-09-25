@@ -248,14 +248,16 @@
 
 
         <!-- 모달 -------------------->
-        <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal videoModal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header"></div>
                     <div class="modal-body">
-                        <video controls width="500">
-                            <source src="">
-                        </video>
+                        <div class="container">
+                            <video controls width="500">
+                                <source src="">
+                            </video>
+                        </div>
                     </div>
                     <div class="modal-footer"></div>
                 </div>
@@ -264,12 +266,13 @@
         <!-- 모달 end. -->
     </body>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
         $(document).ready(function(e){
             $(".modalBtn").click(function(){
-                // let src = "video/"+$(this).data('file');
-                // $(".modal .modal-body").attr("src",src);
-                $(".modal").modal('show');
+                let src = "video/"+$(this).data('file');
+                $(".modal .modal-body").attr("src",src);
+                $(".videoModal").modal("show");
             });
         });
     </script>

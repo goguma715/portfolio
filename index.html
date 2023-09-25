@@ -148,10 +148,10 @@
                                 <ul class="card-text list-unstyled mb-4">
                                     <li class="mb-2">
                                         <i class="bi bi-check text-primary"></i>
-                                        Spring
+                                        Spring,mybatis,Oracle, Bootstrap, rest, maven
                                     </li>
                                 </ul>
-                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">링크</a></div>
+                                <div class="d-grid"><a class="btn btn-outline-primary modalBtn" th:data-file="spring.mp4">링크</a></div>
                             </div>
                         </div>
                     </div>
@@ -252,7 +252,11 @@
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header"></div>
-                    <div class="modal-body"></div>
+                    <div class="modal-body">
+                        <video controls width="500">
+                            <source src="">
+                        </video>
+                    </div>
                     <div class="modal-footer"></div>
                 </div>
             </div>
@@ -262,8 +266,10 @@
 
     <script>
         $(document).ready(function(e){
-            $(".imgBtn").click(function(){
-                $("modal").show();
+            $(".modalBtn").click(function(){
+                // let src = "video/"+$(this).data('file');
+                // $(".modal .modal-body").attr("src",src);
+                $(".modal").modal('show');
             });
         });
     </script>

@@ -12,6 +12,32 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <style>
+            @font-face {
+                font-family: 'NanumSquareNeo-Variable';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+            *{
+                font-family: 'NanumSquareNeo-Variable'; 
+            }
+            #features li{
+                list-style: none;
+                font-size: large;
+                margin-bottom: 10px;
+            }
+            #features ul{
+                padding: 0px;
+                position: relative;
+                top: 25px;
+            }
+            #features li a{
+                color: black;
+                text-decoration: none;
+            }
+        </style>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -35,7 +61,7 @@
                 <div class="row gx-5 justify-content-center">
                     <div class="col-lg-6">
                         <div class="text-center my-5">
-                            <h1 class="display-5 fw-bolder text-white mb-2">안녕하세요.<br> 신입 개발자 장새연입니다.</h1>
+                            <h1 class="display-5 fw-bolder text-white mb-2" style="width: 600px;">안녕하세요.<br>신입 개발자 장새연입니다.</h1>
                             <p class="lead text-white-50 mb-4">잘 부탁드립니다.</p>
                         </div>
                     </div>
@@ -43,31 +69,43 @@
             </div>
         </header>
         <!-- 소개란-->
-        <section class="py-5 border-bottom" id="features">
+        <section class="bg-light py-5 border-bottom" id="features">
             <div class="container px-5 my-5">
                 <div class="row gx-5">
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h2 class="fw-bolder">ABOUT ME.</h2>
                         <ul>
-                            <li>장새연</li>
-                            <li>93.07.15</li>
-                            <li>서울시 관악구</li>
+                            <li><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;장새연</li>
+                            <li><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;93.07.15</li>
+                            <li><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;서울시 관악구</li>
                         </ul>
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h2 class="fw-bolder">CONTECT.</h2>
                         <ul>
-                            <li>010-6586-0715</li>
-                            <li>say715@naver.com</li>
+                            <li><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;010-6586-0715</li>
+                            <li><i class="fa-solid fa-caret-right"></i>&nbsp;&nbsp;say715@naver.com</li>
                         </ul>
                     </div>
                     <div class="col-lg-4">
                         <h2 class="fw-bolder">MY PAGE.</h2>
                         <ul>
-                            <li>Git Hub</li>
+                            <li><i class="fa-solid fa-caret-right"></i>&nbsp;
+                                <a href="https://github.com/goguma715/portfolio">Git Hub<i class="fa-solid fa-arrow-right"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- Contact section-->
+        <section class="py-5" style="border-bottom: solid 1px lightgray;">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+                    <!-- <h2 class="fw-bolder">Skills.</h2> -->
+                    <p class="lead mb-0">^^</p>
+                </div>
+
             </div>
         </section>
         <!-- Pricing section-->
@@ -151,10 +189,10 @@
                                 <ul class="card-text list-unstyled mb-4">
                                     <li class="mb-2">
                                         <i class="bi bi-check text-primary"></i>
-                                        Spring,mybatis,Oracle, Bootstrap, rest, maven
+                                        Spring, mybatis, Oracle, Bootstrap, rest, maven
                                     </li>
                                 </ul>
-                                <div class="d-grid"><a class="btn btn-outline-primary modalBtn" th:data-file="spring.mp4">링크</a></div>
+                                <div class="d-grid"><a class="btn btn-outline-primary modalBtn" data-file="spring.mp4">영상 및 소스</a></div>
                             </div>
                         </div>
                     </div>
@@ -166,14 +204,14 @@
                                 <img class="card-img-top" src="img/test.png" alt="image" style="width:100%">
                             </div>
                             <div class="card-body p-4">
-                                <h4 class="card-title text-center">title</h4>
+                                <h4 class="card-title text-center">영화 리뷰 게시판</h4>
                                 <ul class="card-text list-unstyled mb-4">
                                     <li class="mb-2">
                                         <i class="bi bi-check text-primary"></i>
-                                        content
+                                        SpringBoot, JPA, mariadb, bootstrap, rest, gradle
                                     </li>
                                 </ul>
-                                <div class="d-grid"><a class="btn btn-outline-primary" href="#!">링크</a></div>
+                                <div class="d-grid"><a class="btn btn-outline-primary modalBtn" data-file="springboot.mp4">영상 및 소스</a></div>
                             </div>
                         </div>
                     </div>
@@ -224,29 +262,13 @@
                 </div>
             </div>
         </section>
-        <!-- Contact section-->
-        <section class="bg-light py-5">
-            <div class="container px-5 my-5 px-5">
-                <div class="text-center mb-5">
-                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                    <h2 class="fw-bolder">Get in touch</h2>
-                    <p class="lead mb-0">We'd love to hear from you</p>
-                </div>
-
-            </div>
-        </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 
@@ -254,15 +276,16 @@
         <div class="modal videoModal" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                    <div class="modal-header"></div>
                     <div class="modal-body">
-                        <div class="container">
-                            <video controls width="500">
+                        <div class="container" style="display: flex; align-items: center; justify-content: center; margin-top: 20px;">
+                            <video controls width="700" >
                                 <source src="">
                             </video>
                         </div>
                     </div>
-                    <div class="modal-footer"></div>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-primary close">닫기</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -272,12 +295,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
         $(document).ready(function(e){
+            let videoModal = $(".videoModal");
+
             $(".modalBtn").click(function(){
-                // let src = "/video/"+$(this).data('file');
-                // $(".modal .modal-body").attr("src",src);
-                // $(".videoModal").modal("show");
                 let src = "/video/" + $(this).data('file');
-                let videoModal = $(".videoModal");
                 let videoElement = videoModal.find("video");
                 let videoSource = videoElement.find("source");
 
@@ -285,6 +306,11 @@
                 videoElement[0].load();
                 videoModal.modal("show");
             });
+
+            $('.close').click(function(){
+                $(videoModal).modal('hide');
+            });
+            
         });
     </script>
 </html>

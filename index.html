@@ -52,6 +52,9 @@
                 width: 374px;
                 height: 210px;
             }
+            .card, #demo, #sogam{
+                box-shadow: 0px 0px 8px gray;
+            }
             .info h2{
                 text-align: center;
             }
@@ -70,7 +73,7 @@
             #demo{
                 border: solid 1px lightgray;
                 padding: 30px;
-                border-radius: 10px;            
+                border-radius: 10px;       
             }
 
             #demo .carousel-inner{
@@ -90,6 +93,20 @@
                 border-radius: 10px; 
                 margin-top: 20px;
             }
+            #sogam textarea{
+                width: 100%;   
+                border: 0px;
+                overflow-y: hidden;
+                resize: none;
+                background-color: white;
+            }
+            #sogam .btnDiv{
+                text-align: center;
+            }
+            #sogam .btn{
+                width: 200px;
+            }
+
             .modal-dialog .size{
                 /* width: 1200px; */
                 height: auto;
@@ -362,21 +379,24 @@
                       </div>
 
                       <div id="sogam">
+                        <div class="btnDiv"><a class="btn btn-outline-primary modalBtn" data-file="내서재및에피소드.mp4">시연 영상</a></div>
+                        <br>
                         <p>회원 모두가 자유롭게 소설을 쓰고 또 자유롭게 읽을 수 있는 소설 커뮤니티를 제작하였습니다. 제작기간은 2023.09.21 - 2023.11.09입니다.</p>
-                        <div><a class="btn btn-outline-primary modalBtn" data-file="내서재및에피소드.mp4">시연 영상</a></div>
+                        
                         <p>제가 맡은 부분은 내서재와 에피소드 부분입니다.</p>
-                        <!-- <textarea>
+                        <textarea rows="10" disabled>
                             1. 내서재
-                            1-1. 최근작품
-                            1-2. 관심작품
-                            1-3. 작품활동
+                                1-1. 최근작품
+                                1-2. 관심작품
+                                1-3. 작품활동
+                                
                             2. 에피소드
-                            2-1. 소설 소개 및 에피소드 목록
-                            2-2. 뷰페이지
-                            2-3. 댓글페이지
-                            2-4. 에피소드 작성 페이지
+                                2-1. 소설 소개 및 에피소드 목록
+                                2-2. 뷰페이지
+                                2-3. 댓글페이지
+                                2-4. 에피소드 작성 페이지
 
-                        </textarea> -->
+                        </textarea>
                       </div>
                 </div>
             </div>

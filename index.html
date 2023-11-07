@@ -365,7 +365,7 @@
                         <p>회원 모두가 자유롭게 소설을 쓰고 또 자유롭게 읽을 수 있는 소설 커뮤니티를 제작하였습니다. 제작기간은 2023.09.21 - 2023.11.09입니다.</p>
                         <div><a class="btn btn-outline-primary modalBtn" data-file="내서재및에피소드.mp4">시연 영상</a></div>
                         <p>제가 맡은 부분은 내서재와 에피소드 부분입니다.</p>
-                        <textarea>
+                        <!-- <textarea>
                             1. 내서재
                             1-1. 최근작품
                             1-2. 관심작품
@@ -376,7 +376,7 @@
                             2-3. 댓글페이지
                             2-4. 에피소드 작성 페이지
 
-                        </textarea>
+                        </textarea> -->
                       </div>
                 </div>
             </div>
@@ -417,7 +417,7 @@
             let videoModal = $(".videoModal");
 
             $(".modalBtn").click(function(){
-                let src = "/video/" + $(this).data('file');
+                let src = "video/" + $(this).data('file');
                 let videoElement = videoModal.find("video");
                 let videoSource = videoElement.find("source");
 
